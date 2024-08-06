@@ -23,10 +23,42 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: Return an AsymmetricView (104)
     // TODO: Pass Category variable to AsymmetricView (104)
-    return const Scaffold(
-      // TODO: Add app bar (102)
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('SHRINE'),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.menu,
+            semanticLabel: 'menu',
+          ),
+          onPressed: () {
+            const Text('Icon menu');
+          },
+        ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              debugPrint('Search Button');
+            },
+            icon: const Icon(
+              Icons.search,
+              semanticLabel: 'search',
+            ),
+          ),
+          IconButton(
+            icon: const Icon(
+              Icons.filter,
+              semanticLabel: 'filter',
+            ),
+            onPressed: () {
+              debugPrint('Filter Button');
+            },
+          )
+        ],
+      ),
       // TODO: Add a grid view (102)
-      body: Center(
+
+      body: const Center(
         child: Text('You did it!'),
       ),
       resizeToAvoidBottomInset: false,
